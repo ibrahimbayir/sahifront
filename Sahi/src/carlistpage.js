@@ -51,7 +51,7 @@ const CarListPage = () => {
   // Sayfa açılır açılmaz tüm araçları çek
   useEffect(() => {
     axios
-      .get("http://localhost:3030/api/car/main")
+      .get("https://sahibindenkarsilastir.up.railway.app/api/car/main")
       .then((res) => setCars(res.data))
       .catch((err) => console.error("Failed to fetch cars", err));
   }, []);
@@ -77,7 +77,7 @@ const CarListPage = () => {
     } else if (updated.length === 2) {
       const [car1, car2] = updated;
       axios
-        .post(`http://localhost:3030/api/comparison/${userId}/${car1}/${car2}`)
+        .post(`https://sahibindenkarsilastir.up.railway.app/api/comparison/${userId}/${car1}/${car2}`)
         .then(() => {
           navigate("/compare");
         })
@@ -100,7 +100,7 @@ const CarListPage = () => {
     if (!window.confirm("Are you sure you want to delete this car?")) return;
 
     axios
-      .delete(`http://localhost:3030/api/car/${adminId}/${carId}`)
+      .delete(`https://sahibindenkarsilastir.up.railway.app/api/car/${adminId}/${carId}`)
       .then(() => {
         setCars((prev) => prev.filter((car) => car.id !== carId));
       })
@@ -115,18 +115,18 @@ const CarListPage = () => {
 
   // Filtreleme fonksiyonu
   const handleFilter = (filters) => {
-    let url = "http://localhost:3030/api/car/main";
+    let url = "https://sahibindenkarsilastir.up.railway.app/api/car/main";
 
     if (filters.brand) {
-      url = `http://localhost:3030/api/car/filter/brand/${filters.brand}`;
+      url = `https://sahibindenkarsilastir.up.railway.app/api/car/filter/brand/${filters.brand}`;
     } else if (filters.model) {
-      url = `http://localhost:3030/api/car/filter/model/${filters.model}`;
+      url = `https://sahibindenkarsilastir.up.railway.app/api/car/filter/model/${filters.model}`;
     } else if (filters.fuel) {
-      url = `http://localhost:3030/api/car/filter/fuel/${filters.fuel}`;
+      url = `https://sahibindenkarsilastir.up.railway.app/api/car/filter/fuel/${filters.fuel}`;
     } else if (filters.km) {
-      url = `http://localhost:3030/api/car/filter/km/${filters.km}/${filters.kmDirection}`;
+      url = `https://sahibindenkarsilastir.up.railway.app/api/car/filter/km/${filters.km}/${filters.kmDirection}`;
     } else if (filters.price) {
-      url = `http://localhost:3030/api/car/filter/price/${filters.price}/${filters.priceDirection}`;
+      url = `https://sahibindenkarsilastir.up.railway.app/api/car/filter/price/${filters.price}/${filters.priceDirection}`;
     }
 
     axios
