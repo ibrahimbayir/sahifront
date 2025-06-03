@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
+const navigate = useNavigate();
 
 const AddCarListing = () => {
   const [formData, setFormData] = useState({
@@ -74,7 +77,9 @@ const AddCarListing = () => {
         payload
       );
 
+      
       console.log("Created car:", response.data);
+      navigate("/my-car-listing");
     } catch (err) {
       console.error("Error submitting car:", err);
       alert("Error submitting car!");
