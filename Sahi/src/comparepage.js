@@ -37,7 +37,7 @@ const ComparePage = () => {
       const a = [];
       if (car1.km !== car2.km) {
         const better = car1.km < car2.km ? car1 : car2;
-        a.push(`${better.brand} ${better.model} has lower mileage.`);
+        a.push(`${better.brand} ${better.model} has lower km.`);
       }
       if (car1.year !== car2.year) {
         const newer = car1.year > car2.year ? car1 : car2;
