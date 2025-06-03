@@ -40,7 +40,7 @@ const AdminPage = () => {
     if (!isLoggedIn || !adminId) return;
 
     axios
-      .get(`http://localhost:3030/api/user/getall/${adminId}`)
+      .get(`https://sahibindenkarsilastir.up.railway.app/api/user/getall/${adminId}`)
       .then((res) => {
         const incoming = res.data;
         if (Array.isArray(incoming)) {
@@ -59,7 +59,7 @@ const AdminPage = () => {
     if (!window.confirm("Bu kullanıcıyı silmek istediğinize emin misiniz?")) return;
 
     axios
-      .delete(`http://localhost:3030/api/user/${adminId}/${userToDeleteId}`)
+      .delete(`https://sahibindenkarsilastir.up.railway.app/api/user/${adminId}/${userToDeleteId}`)
       .then(() => {
         setUsers((prev) => prev.filter((u) => u.id !== userToDeleteId));
       })
