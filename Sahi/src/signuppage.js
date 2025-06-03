@@ -23,7 +23,7 @@ const SignupPage = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3030/api/user/signup",
+        "https://sahibindenkarsilastir.up.railway.app/api/user/signup",
         {
           username,
           email,
