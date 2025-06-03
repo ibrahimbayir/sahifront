@@ -55,7 +55,7 @@ function Profilepage() {
     };
 
     try {
-      const res = await fetch("http://localhost:3030/api/user/update", {
+      const res = await fetch("https://sahibindenkarsilastir.up.railway.app/api/user/update", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedUser),
