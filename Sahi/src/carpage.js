@@ -24,7 +24,7 @@ const CarPage = () => {
   useEffect(() => {
     if (!id) return;
     axios
-      .get(`http://localhost:3030/api/car/${id}`)
+      .get(`https://sahibindenkarsilastir.up.railway.app/api/car/${id}`)
       .then((res) => setCar(res.data))
       .catch((err) => console.error("Failed to fetch car data", err));
   }, [id]);
@@ -33,7 +33,7 @@ const CarPage = () => {
     if (!userId || !id) return;
 
     axios
-      .get("http://localhost:3030/api/favorites", {
+      .get("https://sahibindenkarsilastir.up.railway.app/api/favorites", {
         params: { userId },
       })
       .then((res) => {
@@ -51,14 +51,14 @@ const CarPage = () => {
 
     if (isFavorite) {
       axios
-        .delete("http://localhost:3030/api/favorites", {
+        .delete("https://sahibindenkarsilastir.up.railway.app/api/favorites", {
           params: { userId, carId: id },
         })
         .then(() => setIsFavorite(false))
         .catch((err) => console.error("Failed to remove from favorites", err));
     } else {
       axios
-        .post("http://localhost:3030/api/favorites", null, {
+        .post("https://sahibindenkarsilastir.up.railway.app/api/favorites", null, {
           params: { userId, carId: id },
         })
         .then(() => setIsFavorite(true))
