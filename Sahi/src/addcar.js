@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const navigate = useNavigate();
 
 const AddCarListing = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     brand: "",
     model: "",
