@@ -32,7 +32,7 @@ const UpdateCar = () => {
     setUser(storedUser);
     setCarId(storedCarId);
 
-    axios.get(`http://localhost:3030/api/car/${storedCarId}`)
+    axios.get(`https://sahibindenkarsilastir.up.railway.app/api/car/${storedCarId}`)
       .then((res) => {
         const car = res.data;
         setFormData({
@@ -78,7 +78,7 @@ const UpdateCar = () => {
         imagesBase64: formData.imagesBase64, // değişmiyor
       };
 
-      await axios.put(`http://localhost:3030/api/car/${carId}`, payload);
+      await axios.put(`https://sahibindenkarsilastir.up.railway.app/api/car/${carId}`, payload);
 
      
       sessionStorage.removeItem("updateCarId");
