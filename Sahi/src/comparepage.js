@@ -22,7 +22,7 @@ const ComparePage = () => {
   useEffect(() => {
     if (!userId) return;
     axios
-      .get(`http://localhost:3030/api/comparison/${userId}`)
+      .get(`https://sahibindenkarsilastir.up.railway.app/api/comparison/${userId}`)
       .then((res) => {
         const dto = res.data;
         setCar1(dto.car2);
