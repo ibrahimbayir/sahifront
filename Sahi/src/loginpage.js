@@ -26,7 +26,7 @@ const LoginPage = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3030/api/user/login",
+        "https://sahibindenkarsilastir.up.railway.app/api/user/login",
         null,
         {
           params: { email, password },
@@ -49,7 +49,7 @@ const LoginPage = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3030/api/user/admin-login",
+        "https://sahibindenkarsilastir.up.railway.app/api/user/admin-login",
         null,
         {
           params: { email, password },
