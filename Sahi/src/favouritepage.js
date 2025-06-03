@@ -16,13 +16,13 @@ const FavouritePage = () => {
 
   const fetchFavourites = async () => {
     try {
-      const response = await axios.get("http://localhost:3030/api/favorites", {
+      const response = await axios.get("https://sahibindenkarsilastir.up.railway.app/api/favorites", {
         params: { userId },
       });
 
       const favoriteCars = await Promise.all(
         response.data.map(async (fav) => {
-          const res = await axios.get(`http://localhost:3030/api/car/${fav.car.id}`);
+          const res = await axios.get(`https://sahibindenkarsilastir.up.railway.app/api/car/${fav.car.id}`);
           return res.data;
         })
       );
@@ -36,7 +36,7 @@ const FavouritePage = () => {
   const handleRemoveFavourite = async (carId) => {
     try {
       console.log(carId);
-      await axios.delete("http://localhost:3030/api/favorites", {
+      await axios.delete("https://sahibindenkarsilastir.up.railway.app/api/favorites", {
         params: { userId, carId },
       });
       fetchFavourites();
