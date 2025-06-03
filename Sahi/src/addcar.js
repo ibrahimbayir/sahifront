@@ -70,7 +70,7 @@ const AddCarListing = () => {
       };
 
       const response = await axios.post(
-        "http://localhost:3030/api/car",
+        "https://sahibindenkarsilastir.up.railway.app/api/car",
         payload
       );
 
