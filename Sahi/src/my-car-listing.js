@@ -25,7 +25,7 @@ const MyCarListingPage = () => {
   const fetchCars = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3030/api/car/user/${userId}`
+        `https://sahibindenkarsilastir.up.railway.app/api/car/user/${userId}`
       );
       setCars(response.data);
     } catch (error) {
@@ -35,7 +35,7 @@ const MyCarListingPage = () => {
 
   const handleDelete = async (carId) => {
     try {
-      await axios.delete(`http://localhost:3030/api/car/${userId}/${carId}`);
+      await axios.delete(`https://sahibindenkarsilastir.up.railway.app/api/car/${userId}/${carId}`);
       fetchCars(); // Refresh after delete
     } catch (error) {
       console.error("Delete error:", error);
