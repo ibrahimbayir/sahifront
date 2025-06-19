@@ -79,7 +79,7 @@ const Header = () => {
                 <Button
                   onClick={handleAddCar}
                   sx={{
-                    backgroundColor: "#2e7d32",
+                    backgroundColor: "#5c2e2e",
                     color: "white",
                     fontWeight: "bold",
                     borderRadius: "8px",
@@ -97,7 +97,7 @@ const Header = () => {
                   onClick={() => navigate("/my-car-listing")}
                   startIcon={<DirectionsCar />}
                   sx={{
-                    backgroundColor: "#6a1b9a",
+                    backgroundColor: "#5c2e2e",
                     color: "white",
                     fontWeight: "bold",
                     borderRadius: "8px",
@@ -117,7 +117,7 @@ const Header = () => {
               <Button
                 onClick={() => navigate("/admin")}
                 sx={{
-                  backgroundColor: "#1976d2",
+                  backgroundColor: "#5c2e2e",
                   color: "white",
                   borderRadius: "8px",
                   px: 2,
